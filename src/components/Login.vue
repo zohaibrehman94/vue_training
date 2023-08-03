@@ -48,50 +48,28 @@ const saveForm = (event) => {
 }
 </script>
 
-<template>
-    <form>
-
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                    <label class="form-label" for="firstName">First Name</label>
-                    <input v-model.trim="firstName" type="text" id="firstName" class="form-control" />
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                    <label class="form-label" for="lastName">Last Name</label>
-                    <input v-model.trim="lastName" type="text" id="lastName" class="form-control" />
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 mb-4 d-flex align-items-center">
-                <div class="form-outline datepicker w-100">
-                    <label class="form-label">Password</label>
-                    <input type="password" v-model.trim="password" class="form-control" />
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 mb-4 pb-2">
-                <div class="form-outline">
-                    <label class="form-label" for="emailAddress">Email</label>
-                    <input type="email" id="emailAddress" class="form-control" v-model.trim="email" />
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="pt-2">
-            <button class="btn btn-primary btn" @click="saveForm">
-                Login
-            </button>
-        </div>
-    </form>
+<template lang="pug">
+form
+.row
+    .col-md-6.mb-4
+        .form-outline
+            label.form-label(for='firstName') First Name
+            input#firstName.form-control(v-model.trim='firstName' type='text')
+    .col-md-6.mb-4
+        .form-outline
+            label.form-label(for='lastName') Last Name
+            input#lastName.form-control(v-model.trim='lastName' type='text')
+.row
+    .col-md-6.mb-4.d-flex.align-items-center
+        .form-outline.datepicker.w-100
+            label.form-label Password
+            input.form-control(type='password' v-model.trim='password')
+.row
+    .col-md-12.mb-4.pb-2
+        .form-outline
+            label.form-label(for='emailAddress') Email
+            input#emailAddress.form-control(type='email' v-model.trim='email')
+.pt-2
+    button.btn.btn-primary.btn(@click='saveForm')
+        | Login
 </template>

@@ -20,11 +20,12 @@ const emailReceived = (event) => {
 }
 </script>
 
-<template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <userInfo :user="user" @email="emailReceived" />
-  </div>
+
+<template lang="pug">
+.about 
+  h1 This is an about page
+  userInfo(:user="user" @email="emailReceived")
+
 </template>
 
 <style>
